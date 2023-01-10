@@ -1,8 +1,8 @@
-import React, {useRef, useEffect} from 'react';
-import {useStore} from '@/hooks';
+import { useStore } from '@/hooks';
+import { FontSizes } from '@/styles/Sizes';
+import { observer } from 'mobx-react';
+import React, { useEffect, useRef } from 'react';
 import DropdownAlert from 'react-native-dropdownalert';
-import {FontSizes} from '@/styles/Sizes';
-import {observer} from 'mobx-react';
 
 const baseStyle = {
   textAlign: 'left',

@@ -19,7 +19,7 @@ const AlertTab = () => {
         name={Screens.alertHistory}
         component={AlertHistory}
         options={{
-          title: 'Messages',
+          title: 'Event History',
           headerLeft: () => {
             return <Image source={navHeaderBackImage} ml={4}/>
           }
