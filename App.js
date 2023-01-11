@@ -6,11 +6,11 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import {Platform, UIManager} from 'react-native';
-import {NativeBaseProvider, StatusBar} from 'native-base';
-import Route from '@/Route';
 import StoreProvider from '@/mst/StoreProvider';
+import Route from '@/Route';
+import { NativeBaseProvider, StatusBar } from 'native-base';
+import React from 'react';
+import { Platform, UIManager } from 'react-native';
 
 import DropdownAlert from '@/components/DropDownAlert';
 import LoadingHud from '@/components/hud';
@@ -29,7 +29,7 @@ const App: () => React$Node = () => {
     <StoreProvider>
       {/* This already has SafeAreaProvider */}
       <NativeBaseProvider theme={theme}>
-        <StatusBar barStyle={'dark-content'}/>
+        <StatusBar barStyle={'dark-content'} />
         <Route />
         <LoadingHud />
         <DropdownAlert />

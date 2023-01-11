@@ -1,18 +1,19 @@
-import React from 'react';
-import {Alert, NativeEventEmitter, NativeModules, Platform, TouchableOpacity, PermissionsAndroid} from 'react-native';
-import {Column, FlatList, Heading, Icon, Row, Text, useToast, View} from 'native-base';
-import {observer} from 'mobx-react';
-import {values} from 'mobx';
-import config from '@/config';
+/* eslint-disable  */
 import ActionButton from '@/components/buttons/ActionButton';
+import config from '@/config';
+import { useNavigation } from '@react-navigation/native';
+import { values } from 'mobx';
+import { observer } from 'mobx-react';
+import { Column, FlatList, Heading, Icon, Row, Text, useToast, View } from 'native-base';
+import React from 'react';
+import { Alert, NativeEventEmitter, NativeModules, Platform, TouchableOpacity } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
-import {useNavigation} from '@react-navigation/native';
 
+import { Screens } from '@/constants/Navigation';
+import { useStore } from '@/hooks';
+import { sleep } from '@/utils';
+import { askLocationPermissionForBLEScan, checkBluetoothPermission } from '@/utils/bluetooth';
 import BLEManager from 'react-native-ble-manager';
-import {useStore} from '@/hooks';
-import {sleep} from '@/utils';
-import {Screens} from '@/constants/Navigation';
-import {askLocationPermissionForBLEScan, checkBluetoothPermission} from '@/utils/bluetooth';
 
 const BLEManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BLEManagerModule);
@@ -174,3 +175,4 @@ const EmptyComponent = () => {
 };
 
 export default observer(SearchDevices);
+/* eslint-disable  */
