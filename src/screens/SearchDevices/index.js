@@ -1,4 +1,3 @@
-/* eslint-disable  */
 import ActionButton from '@/components/buttons/ActionButton';
 import config from '@/config';
 import { useNavigation } from '@react-navigation/native';
@@ -175,4 +174,3 @@ const EmptyComponent = () => {
 };
 
 export default observer(SearchDevices);
-/* eslint-disable  */

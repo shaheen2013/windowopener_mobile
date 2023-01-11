@@ -1,4 +1,3 @@
-/* eslint-disable  */
 import ActionButton from "@/components/buttons/ActionButton";
 
 import FormInput from "@/components/FormInput";
@@ -174,4 +173,4 @@ const Settings = () => {
 
 export default observer(Settings);
 
-/* eslint-disable  */
+
