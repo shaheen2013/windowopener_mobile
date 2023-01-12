@@ -205,11 +205,16 @@ export async function getUserProfile() {
   ).then(r => r.data?.data);
 }
 
-export async function updateUserProfile({name, address}){
+export async function updateUserProfile({name, gps_location, address, zip_code, latitude, longitude }){
   return instance.post(
     '/user/profile',
     {
-      name, address
+      name, 
+      gps_location, 
+      address, 
+      zip_code, 
+      latitude, 
+      longitude 
     }
   ).then(r => r.data?.data);
 }

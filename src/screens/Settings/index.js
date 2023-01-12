@@ -27,9 +27,13 @@ const Settings = () => {
   const loadProfile = async () => {
     try {
       store.hud.show();
-      const { name, address } = await Api.getUserProfile();
+      const { name, gps_location, address, zip_code, latitude, longitude } = await Api.getUserProfile();
       setName(name);
+      setIsSelected(gps_location);
       setAddress(address);
+      setZipCode(zip_code);
+      setLatitude(latitude);
+      setLongitude(longitude);
     } catch (ex) {
       const apiError = apiError2Message(ex);
       if (apiError) {
@@ -159,7 +163,14 @@ const Settings = () => {
   const onPressSave = async () => {
     try {
       store.hud.show();
-      await Api.updateUserProfile({ name, address });
+      await Api.updateUserProfile({ 
+        name, 
+        gps_location: isSelected, 
+        address, 
+        zip_code: zipCode,
+        latitude,
+        longitude,
+      });
       store.notification.showSuccess('Profile updated');
       nav.goBack();
     } catch (ex) {
@@ -198,7 +209,7 @@ const Settings = () => {
           mt={3}
         >
         <FormControl.Label>Use GPS</FormControl.Label>
-        <View  style={{
+          <View  style={{
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
